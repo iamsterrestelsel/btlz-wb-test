@@ -1,22 +1,20 @@
 # Шаблон для выполнения тестового задания
 
 ## Описание
-Шаблон подготовлен для того, чтобы попробовать сократить трудоемкость выполнения тестового задания.
-
-В шаблоне настоены контейнеры для `postgres` и приложения на `nodejs`.  
-Для взаимодействия с БД используется `knex.js`.  
-В контейнере `app` используется `build` для приложения на `ts`, но можно использовать и `js`.
-
-Шаблон не является обязательным!\
-Можно использовать как есть или изменять на свой вкус.
-
-Все настройки можно найти в файлах:
-- compose.yaml
-- dockerfile
-- package.json
-- tsconfig.json
-- src/config/env/env.ts
-- src/config/knex/knexfile.ts
+Настроить .env файл: добавить WB Token, ID google таблицы
+Также положить json ключ для Google Cloud Console Service Account в папку src/google/utils, указать название в .env GOOGLE_APPLICATION_CREDENTIALS
+Запустить postgress:
+```bash
+docker compose up -d --build postgres
+```
+Собрать проект через:
+```bash
+docker compose up -d --build app
+```
+Запустить с помощью команды:
+```bash
+npm run dev
+```
 
 ## Команды:
 
